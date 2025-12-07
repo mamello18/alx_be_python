@@ -1,31 +1,12 @@
-from library_system import Book, EBook, PrintBook, Library
+from book_class import Book
 
-def main():
-    # Create a Library instance
-    my_library = Library()
+# Create a Book instance
+book1 = Book("1984", "George Orwell", 1949)
 
-    # Create instances of each type of book
-    classic_book = Book("1984", "George Orwell", 1949)
-    digital_novel = EBook("Snow Crash", "Neal Stephenson", 1992, 500)
-    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 1951, 234)
+# Print book details
+print(book1)
+print(f"Book('{book1.title}' , '{book1.author}' , {book1.year})")
 
-    # Add books to the library
-    my_library.add_book(classic_book)
-    my_library.add_book(digital_novel)
-    my_library.add_book(paper_novel)
+# Simulate deleting a book
+print("Deleting 1974")
 
-    # List all books in the library
-    my_library.list_books()
-
-    # Example of __repr__ usage
-    print(repr(classic_book))
-
-    # Example of deleting a book
-    print(f"Deleting {classic_book.title}")
-    my_library.books.remove(classic_book)
-
-    # List remaining books
-    my_library.list_books()
-
-if __name__ == "__main__":
-    main()
