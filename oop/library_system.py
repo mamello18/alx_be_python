@@ -1,16 +1,15 @@
-# Base class
+# Base Class
 class Book:
     def __init__(self, title, author):
         self.title = title
         self.author = author
 
-# Derived class - EBook
+# Derived Classes
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
         self.file_size = file_size
 
-# Derived class - PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
